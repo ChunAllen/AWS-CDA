@@ -1,6 +1,7 @@
 # Load Balancer 
 * Are servers that forward internet traffic to multiple serves (EC2) downstreams
 * frontline for the user and their request will go thru different server.
+* Provides static DNS name that we can use in our application.
 
 ## Why use load balancer?
 * Spread load across multiple downstream instances
@@ -24,7 +25,7 @@
   * Has a port mapping feature to redirect to dynamic port
   * Stickiness can be enable at target group level 
   * The application server dont see the IP of the client directly 
-  * True UP of the client is inserted in the header X-Forwared-For
+  * True IP of the client is inserted in the header X-Forwared-For
 
 * Network Load Balancer - v2 new generation 2017
   * mostly used for extreme performance and should not be the default load balancer you choose
@@ -37,3 +38,8 @@ Note:
 * All Load Balancers have health check capibility
 * ALB can route on based on hostname /path
 * ALB is grate fit with ECS
+
+# Cross- Zone Load Balancing
+
+* Each load balacner instance distributes evently across all registered instance in all AZ
+* Cross Zone Load Balancer is in load balancer level it is disabled by default
