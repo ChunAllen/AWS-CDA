@@ -67,7 +67,7 @@
   * NACL - stateless, subnet rules for an inbound and outbound
   * Security Group - stateful, operate at the EC2 instance level or ENI
   * VPC peering - connect two VPC with non overlapping IP ranges
-  * VPC enddpoints - provide private access to AWS Services withing VPC
+  * VPC endpoints - provide private access to AWS Services withing VPC
   * VPC Flow Logs - network traffic logs
   * Site to Site VPN - VPN over public internet between on-premisses DC and AWS
   * Direct Connect - direct private connection to AWS physically
