@@ -19,6 +19,10 @@ Note: Developers get feedback about the test and checks that have passed / faile
 ## CodeCommit
 - version control is the ability to understand the various changes that happened to the code over time
 
+Note:
+  * It does not support HTTP public access
+  * Only SSH, HTTPS, IAM
+
 * Security
   * Authentication in Git
     * SSH Keys

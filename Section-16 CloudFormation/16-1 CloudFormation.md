@@ -6,6 +6,7 @@
 * To update a template, we **cannot** edit previous ones. We have to upload a new version of the template to AWS
 * Stacks are identified by name 
 * Deleting a stack deletes every single artifact that was created by CloudFormation
+* You **don't need** to specify the order in which CloudFormation will create resources
 
 ## Deploying CloudFormation Template
 * Manual Way
@@ -108,25 +109,3 @@ Mappings:
 
 * Parameters
   * Parameters when the values are really user specific
-
-## Fn::FindInMap
-Note: Accessing Mapping Values
-* We use `Fn::FindInMap` to return a named value from specific key
-* `!FindInMap [MapName, TopLevelKey, SecondLevelKey]`
-
-**Sample**
-```
-Mappings:
-  RegionMap:
-    us-east-1:
-      "32": "ami-123123123"
-      "64": "ami-098665078"
-    us-west-1:
-      "32": "ami-213123923"
-      "64": "ami-989721377"
-Resources:
-  MyEC2Instance:
-    Type: "AWS::EC2::Instance"
-    Properties:
-      ImageId: !FindInMap [RegionMap, !Ref "AWS::Region, 32], 
-```
