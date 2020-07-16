@@ -126,6 +126,7 @@ $ aws kinesis get-records --shard-iterator "AAAAAasdasdasd"
 * Progress is checkpointed into DynamoDB
 * KCL can run on EC2, Beanstalk, on Premise Application
 * Records are read in order at the shard level
+* You can have maximum of EC2 instances running in parallel equal to the amount of shards in Kinesis Streams
 
 
 ## Kinesis Security
