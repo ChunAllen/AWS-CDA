@@ -4,6 +4,8 @@
 * Data is encrypted before sending and decrypted after receiving 
 * SSL certificats help with encryption (HTTPS)
 * Encryption in flight ensures no MITM (man in the middle attach) can happen
+* Store data in encrypted queues
+* Encrypting without any changes in code
 
 ## Encryption Server Side at Rest
 * Server side encryption means that the data is sent encrypted to the server first
