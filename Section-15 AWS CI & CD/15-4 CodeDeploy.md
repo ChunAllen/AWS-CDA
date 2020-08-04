@@ -3,6 +3,8 @@
 * only **allow to deploy** to **EC2** instances
 * is a managed service, there are not security groups to manage
 * There are several ways to handle deployments using open source tools (Ansible, Terraform, Chef, Puppet, etc...)
+* Use **CodeDeploy Deployment Groups** to ensure that the application gets deployed to different sets of EC2 instances at different times allowing for a smooth transition
+
 
 ## Steps to make it work
 * Ec2 machine must be running on the CodeDeploy Agent
