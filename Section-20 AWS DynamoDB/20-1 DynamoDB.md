@@ -18,6 +18,10 @@
 * Which concurrency model can be implemented with DynamoDB? - Optimistic Locking
 * Which feature of DynamoDB allows it to achieve Optimistic Locking? - Conditional Writes
 
+## To Reduce Latency
+* Use **eventually consistent reads** over **strongly consistent reads**
+* Consider using Global Tables if you application is accessed by global distributed users
+
 ## Throughput 
 * Read Capacity Units (RCU) - throughput for reads
 * Write Capacity Units (WCU) - throughput for writes
