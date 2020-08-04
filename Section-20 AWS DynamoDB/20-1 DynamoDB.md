@@ -95,16 +95,15 @@ Item Write: 6
 ```
 
 
-## Strongly Consistend Read vs Eventually Consisten Read
+## Strongly Consistend Read vs Eventually Consistent Read
 * Eventually COnsistent Read - If we read just after a write, it's possible we'll get unexpected response because of replication
 * Strongly Consistent Read - If we read just after a write, we will get the correct data
 * By Default - DynamoDB uses Eventually Consisten Reads, but `GetItem` query and `Scan` provide a `ConsistentRead` parameter you can set to True
 
 
 ## DynamoDB Basic APIs
-How can you select the attributes to retrieve in the response while using the GetItem DynamoDB CLI?
-  * Use ProjectionExpression
-
+* ProjectionExpression
+  * select the attributes to retrieve in the response while using the GetItem DynamoDB CLI. This is equivalent to `SELECT name, address FROM users` rather than `SELECT * FROM users`
 
 * PutItem 
   * write data to DynamoDB. create data of full replace
