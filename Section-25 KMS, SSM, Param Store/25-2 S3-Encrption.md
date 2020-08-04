@@ -2,6 +2,8 @@
 
 * There are 4 methods of encrypting objects in S3
   * SSE-S3 - encrypts S3 object using keys handled and managed by AWS
+           - When you use Server-Side Encryption with Amazon S3-Managed Keys (SSE-S3), each object is encrypted with a unique key. As an additional safeguard, it encrypts the key itself with a master key that it regularly rotates. So this option is incorrect.
+           
   * SSE-KMS - leverages KMS to manage encryption keys
   * SSE-C - when you want to manage your own encryption keys
   * Client Side Encryption
