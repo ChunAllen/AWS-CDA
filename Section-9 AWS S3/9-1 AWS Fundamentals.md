@@ -13,6 +13,8 @@
     * Metadata (list of key / value pairs - system or user metadata)
     * Tags (Unicode key / Value pair up to 10) useful for security / lifecycle
     * Version ID if we enable versioning
+    
+* If two writes are made to a non-versione object at the same time, it is possible that only a single event notification will be sent
 
 # Bucket Properties
 
