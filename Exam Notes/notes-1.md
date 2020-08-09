@@ -5,5 +5,5 @@
   * Configure an SSL/TLS certificate on an ALB via AWS Certicate Manager (ACM)
 
 
-### To Troubleshoot the issue and to see which commands are causing an error on CodeBuild 
+#### To Troubleshoot the issue and to see which commands are causing an error on CodeBuild 
   * You can run AWS CodeBuild Locally 
