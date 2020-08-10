@@ -24,10 +24,10 @@
   * Use `ChangeMessageVisibility` action to extend a message's visibility
 
 ### What record should you create in Route 53 if you want to point the URL to URL 
-  * Use `CNAME`
+  * Use `CNAME` - URL to URL
   * Others:
+    * A - URL to IPv4       
     * AAAA - URL to IPv6
-    * A - URL to IPv4
     * Alias - URL to AWS Resource (ALB)
 
 ### Which of the following credentials is NOT supported by IAM for CodeCommit?
