@@ -57,8 +57,8 @@
 * always convert eventually to strong (eventually / 2)
 
 **For Example**
-* Item Size: 6 KB
-* Item Read: 4 Eventually Consistent
+* Item Size: 6 KB,
+* Item Read: 4 Eventually Consistent,
 * Item Write: 7
 
 ```
@@ -67,26 +67,26 @@
 ```
 -------------------------------
 
-* Item Size: 6KB
-* Item Read: 4 Strong Consistent
-* Item Write: 7 
+* Item Size: 6KB,
+* Item Read: 4 Strong Consistent,
+* Item Write: 7
 
 ```
 => 7 * 6KB = 42 WCU
 => 4 * (8 / 4KB) = 8 RCU
 ```
 -------------------------------
-* Item Size: 10KB
-* Item Read: 10 Strong Consistent
-* Item Write: 120
+* Item Size: 10KB,
+* Item Read: 10 Strong Consistent,
+* Item Write: 120 per minute
 
 ```
 => 10 * (12 / 4KB) = 30 RCU (because 10kb will be rounded up to 12KB)
 => (120 / 60) * 10KB = 20 WCU
 ```
 ---------------------------------
-* Item Size: 16KB
-* Item Read: 12 Eventually Consistent
+* Item Size: 16KB,
+* Item Read: 12 Eventually Consistent,
 * Item Write: 6
 
 ```
