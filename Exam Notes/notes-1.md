@@ -70,11 +70,11 @@
   * Permissions Boundary
 
   Others:
-    * Resource-based policy - Resource-based policies grant permissions to the principal that is specified in the policy. Principals can be in the same account as the resource or in other accounts. The most common examples of resource-based policies are Amazon S3 bucket policies and IAM role trust policies.
+  * Resource-based policy - Resource-based policies grant permissions to the principal that is specified in the policy. Principals can be in the same account as the resource or in other accounts. The most common examples of resource-based policies are Amazon S3 bucket policies and IAM role trust policies.
 
-    * Identity-based policy - Help attach managed and inline policies to IAM identities (users, groups to which users belong, or roles). Identity-based policies grant permissions to an identity.
+  * Identity-based policy - Help attach managed and inline policies to IAM identities (users, groups to which users belong, or roles). Identity-based policies grant permissions to an identity.
 
-    * Access control list (ACL) - Use ACLs to control which principals in other accounts can access the resource to which the ACL is attached. ACLs are similar to resource-based policies, although they are the only policy type that does not use the JSON policy document structure. ACLs are cross-account permissions policies that grant permissions to the specified principal.
+  * Access control list (ACL) - Use ACLs to control which principals in other accounts can access the resource to which the ACL is attached. ACLs are similar to resource-based policies, although they are the only policy type that does not use the JSON policy document structure. ACLs are cross-account permissions policies that grant permissions to the specified principal.
 
 ### As part of his development work, an AWS Certified Developer Associate is creating policies and attaching them to IAM identities. After creating necessary Identity-based policies, he is now creating Resource-based policies. Which is the only resource-based policy that the IAM service supports?
   * Trust Policy
@@ -180,3 +180,7 @@
 
 ### A developer at a company is trying to create a digital signature for SSH'ing into the Amazon EC2 instances. Which of the following entities can be used to facilitate this use-case?
   * Key Pairs 
+
+
+### Computing WCU and RCU in DynamoDB
+  * Check https://github.com/ChunAllen/AWS-CDA/blob/5fd4de2d7c6ab2aa1f343ffca80bf15ef5fd9828/Section-20%20AWS%20DynamoDB/20-1%20DynamoDB.md#write-capacity-units
