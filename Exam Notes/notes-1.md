@@ -18,7 +18,9 @@
   * Others:
     * All at Once - fastest but instances aren't available to serve traffic for a bit (downtime)
     * Rolling with Additional Batches - Like rolling, but **spins up new instances** to move the batch (so that the old application is still available)
-    * Immutable - spins up new instances in new ASG, deploys version to these intstances and then **swaps all instances when everything is healthy**
+    * Immutable 
+      - spins up new instances in new ASG, deploys version to these intstances and then **swaps all instances when everything is healthy**
+      - ensures that your new application version is always deployed to new instances, instead of updating existing instances. It also has the additional advantage of a quick and safe rollback in case the deployment fails
 
 ### If you want the SQS queue to extend the process
   * Use `ChangeMessageVisibility` action to extend a message's visibility
