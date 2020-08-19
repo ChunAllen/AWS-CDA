@@ -51,7 +51,7 @@
   * rotation policies
   * disable
   * enable
-  '
+  
 * We need to create User Keys in KMS before using the encryption features for EBS, S3, etc... - we can use the aws managed service keys in KMS
 
 * Audit Key usage using CloudTrail

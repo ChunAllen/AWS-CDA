@@ -118,5 +118,6 @@ You can create a custom CloudWatch metric for your EC2 Linux instance statistics
 * CloudWatch Events
 
 ### SQS Short Polling vs Long Polling
-* Short Polling - This is the default polling of SQS 
-* Long Polling - makes it inexpensive to retrieve messages from your Amazon SQS queue as soon as the messages are available
+* Short Polling - This is the default polling of SQS, Amazon SQS sends the response right away, even if the query found no messages.
+
+* Long Polling - Amazon SQS sends a response after it collects at least one available message, up to the maximum number of messages specified in the request. Amazon SQS sends an empty response only if the polling wait time expires. Makes it inexpensive to retrieve messages from your Amazon SQS queue as soon as the messages are available
