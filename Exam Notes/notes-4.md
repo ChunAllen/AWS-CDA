@@ -131,3 +131,44 @@ $(aws ecr get-login --no-include-email)
 docker pull 1234567890.dkr.ecr.eu-west-1.amazonaws.com/demo:latest
 ```
 * The get-login command retrieves a token that is valid for a specified registry for 12 hours, and then it prints a docker login command with that authorization token. You can execute the printed command to log in to your registry with Docker, or just run it automatically using the $() command wrapper. After you have logged in to an Amazon ECR registry with this command, you can use the Docker CLI to push and pull images from that registry until the token expires. The docker pull command is used to pull an image from the ECR registry.
+
+### CodeDeploy Lifecycle in order
+* ApplicationStop
+* DownloadBundle
+* BeforeInstall
+* AfterInstall
+* ApplicationStart
+* ValidateService
+
+
+### CodeBuild to upload artifacts to Amazon S3
+* If you choose ProjectArtifacts and your value type is S3 then the build project stores build output in Amazon Simple Storage Service (Amazon S3). For that, you will need to give AWS CodeBuild permissions to upload.
+
+### Truth about health checks
+* If there are no other scaling conditions attached to the Auto Scaling group, the Auto Scaling group maintains this number of running instances even if an instance becomes unhealthy.
+
+### Min and Max of SQS Message
+* Min - 1 byte (1 char)
+* Max - 256 KB
+
+### Kinds of Deployment 
+
+* **Blue - Green Deployment** - This creates first the v1 and v2 then after everything passed it will delete the v1 and remain the v2 
+
+* **All At Once** - This is the quickest deployment method. Suitable if you can accept a short loss of service, and if quick deployments are important to you.
+
+* **Rolling** -  Avoids downtime and minimizes reduced availability, at a cost of a longer deployment time. Suitable if you can't accept any period of completely lost service. With this method, your application is deployed to your environment one batch of instances at a time.
+
+* **Rolling with Additional Batches** -  Avoids any reduced availability, at a cost of an even longer deployment time compared to the Rolling method.
+With this method, Elastic Beanstalk launches an extra batch of instances, then performs a rolling deployment. Launching the extra batch takes time, and ensures that the same bandwidth is retained throughout the deployment.
+
+* Immutable - A slower deployment method, that ensures your new application version is always deployed to new instances, instead of updating existing instances. 
+
+* **In Place Deployment** - The application on each instance in the deployment group is stopped, the latest application revision is installed, and the new version of the application is started and validated. You can use a load balancer so that each instance is deregistered during its deployment and then restored to service after the deployment is complete. 
+
+* **Warm Standby Deployment** - is used to describe a Disaster Recovery scenario in which a scaled-down version of a fully functional environment is always running in the cloud.
+
+* **Pilot Light Deployment** - is a Disaster Recovery approach where you simply replicate part of your IT structure for a limited set of core services so that the AWS cloud environment seamlessly takes over in the event of a disaster.
+
+### Elastic Load Balancer
+- distributes workloads across multiple compute resources and checks your instances' health status to name a few, but it does not automatically increase and decrease the number of instances based on the application requirement

@@ -31,6 +31,17 @@
 * Blue Green Deployment
   * This creates first the v1 and v2 then after everything passed it will delete the v1 and remain the v2 
 
+## CodeDeploy Deployment Groups
+* You can specify one or more deployment groups for a CodeDeploy application. The deployment group contains settings and configurations used during the deployment. Most deployment group settings depend on the compute platform used by your application. Some settings, such as rollbacks, triggers, and alarms can be configured for deployment groups for any compute platform.
+
+In an EC2/On-Premises deployment, a deployment group is a set of individual instances targeted for deployment. A deployment group contains individually tagged instances, Amazon EC2 instances in Amazon EC2 Auto Scaling groups, or both.
+
+## CodeDeploy Agent 
+* The CodeDeploy agent is a software package that, when installed and configured on an instance, makes it possible for that instance to be used in CodeDeploy deployments. The agent connects the EC2 instances to the CodeDeploy service.
+
+## CodeDeploy Hooks
+* Hooks are found in the AppSec file used by AWS CodeDeploy to manage deployment. Hooks correspond to lifecycle events such as ApplicationStart, ApplicationStop, etc. to which you can assign a script.
+
 ## CodeStar
 * is an integrated solution the regroups Github, CodeCommit, CodeBuild, CodeDeploy, CloudFormation, CloudPipeline, CloudWatch
 * Helps create CICD-ready projects for EC2, Lambda, Beanstalk
