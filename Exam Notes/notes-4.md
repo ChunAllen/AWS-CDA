@@ -172,3 +172,6 @@ With this method, Elastic Beanstalk launches an extra batch of instances, then p
 
 ### Elastic Load Balancer
 - distributes workloads across multiple compute resources and checks your instances' health status to name a few, but it does not automatically increase and decrease the number of instances based on the application requirement
+
+### To decode additional information about the authorization status of a request from an encoded message returned in response to an AWS request.
+* Use AWS STS decode-authorization-message
