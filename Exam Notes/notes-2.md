@@ -159,6 +159,12 @@ Note: By Default, DynamoDB uses Eventually Consistent, if you set `ConsistentRea
 
 * `!FindInMap` - The intrinsic function Fn::FindInMap returns the value corresponding to keys in a two-level map that is declared in the Mappings section
 
+* `Export` - To share information between stacks, export a stack's output values. Other stacks that are in the same AWS account and region can import the exported values.
+
+* `Fn::ImportValue` - To import the values exported by another stack
+
+* `Fn::Transform` - used in SAM template
+
 ### Reserved vs Provisioned Concurrency in Lambda
 * Reserved Concurrency - gives a certain limit of concurrency. This will be limited to max `N` number of concurrency
 * Provisioned Concurrency - increase provisioned concurrency in anticipation of peak traffic. To increase provisioned concurrency automatically as needed, use the Application Auto Scaling API to register a target and create a scaling policy.

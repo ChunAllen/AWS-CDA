@@ -98,3 +98,36 @@ For the given use-case, you would create a `<CORSRule>` in `<CORSConfiguration>`
 
 * Other Supported routing strategies:
 https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#rule-condition-types
+
+
+### Best Practice on adding read only access for EC2 to DyamoDB
+* Create an IAM role with an AmazonDynamoDBReadOnlyAccess policy and apply it to the EC2 instance profile - you should not create an IAM user and pass the user's credentials to the application or embed the credentials in the application. Instead, create an IAM role that you attach to the EC2 instance to give temporary security credentials to applications running on the instance. When an application uses these credentials in AWS, it can perform all of the operations that are allowed by the policies attached to the role.
+
+
+### How CodeDeploy rollbacks deployment 
+* by redeploying a previously deployed revision of an application as a new deployment. These rolled-back deployments are technically new deployments, with new deployment IDs, rather than restored versions of a previous deployment.
+
+### To improve execution time of Lambda Function if it is connecting to DynamoDB or RDS
+* Move the database connection out of the handler
+```
+def handler(event, context):
+    mysql = mysqlclient.connect()
+    data = event['data']
+    mysql.execute(f"INSERT INTO foo (bar) VALUES (${data});")
+    mysql.close()
+    return
+```
+- The connection should be outside of the handler
+
+### Defining Environments in Elastic Beanstalk 
+* You can create and manage separate environments for development, testing, and production use, and you can deploy any version of your application to any environment. Environments can be long-running or temporary. When you terminate an environment, you can save its configuration to recreate it later.
+
+### What's the cause of Lambda Error Memory Size: 3008 MB Max Memory Used
+* Lambda Function ran out of RAM 
+
+### Pull existing Docker images from ECR
+```
+$(aws ecr get-login --no-include-email)
+docker pull 1234567890.dkr.ecr.eu-west-1.amazonaws.com/demo:latest
+```
+* The get-login command retrieves a token that is valid for a specified registry for 12 hours, and then it prints a docker login command with that authorization token. You can execute the printed command to log in to your registry with Docker, or just run it automatically using the $() command wrapper. After you have logged in to an Amazon ECR registry with this command, you can use the Docker CLI to push and pull images from that registry until the token expires. The docker pull command is used to pull an image from the ECR registry.
