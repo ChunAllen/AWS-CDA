@@ -174,4 +174,9 @@ With this method, Elastic Beanstalk launches an extra batch of instances, then p
 - distributes workloads across multiple compute resources and checks your instances' health status to name a few, but it does not automatically increase and decrease the number of instances based on the application requirement
 
 ### To decode additional information about the authorization status of a request from an encoded message returned in response to an AWS request.
-* Use AWS STS decode-authorization-message
+* Use AWS STS `decode-authorization-message`
+
+### What is IAM instance role
+* is a container for an IAM role that you can use to pass role information to an EC2 instance when the instance starts
+
+### 
